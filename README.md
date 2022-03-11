@@ -48,6 +48,13 @@
   <li>Body: <code>{ "title": "TITLE NAME", "createdby": "CREATED BY NAME" }</code></li>
 </ul>
 
+<p><code>GET: /todo/delete/:id</code> - <i>deletes the TODO list from the database</i></p>
+<p>Requirements:</p>
+<ul>
+  <li>User must be logged in</li>
+  <li><code>:id</code> must be replaced with the list's ID</li>
+</ul>
+
 <p><code>POST: /todo/addtask</code> - <i>adds the task to a certain TODO list</i></p>
 <p>Requirements:</p>
 <ul>
@@ -62,3 +69,23 @@
   <li><code>:id</code> must be replaced with the task's ID</li>
 </ul>
 
+<p><code>POST: /todo/list/:id/useradd</code> - <i>adds the manager to the list</i></p>
+<p>Requirements:</p>
+<ul>
+  <li>User must be logged in</li>
+  <li>Body: <code>{ "user": "USERNAME" }</code></li>
+</ul>
+
+<p><code>POST: /todo/list/:id/userdelete</code> - <i>deletes the manager from the list</i></p>
+<p>Requirements:</p>
+<ul>
+  <li>User must be logged in</li>
+  <li>Body: <code>{ "user": "USERNAME" }</code></li>
+</ul>
+
+<p><code>POST: /todo/list/:id/changeflag</code> - <i>changes the task's flag (active, done..)</i></p>
+<p>Requirements:</p>
+<ul>
+  <li>User must be logged in</li>
+  <li>Body: <code>{ "flag": "VALID FLAG" }</code> - valid flags (<code>"Active"</code>, <code>"Done"</code>, <code>"Removed"</code></li>
+</ul>
