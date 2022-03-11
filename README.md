@@ -1,2 +1,2 @@
-# TODO List in NodeJS
-TODO List project programmed in NodeJS
+# TODO List
+> This is the Javascript server that contains TODO list architecture.
