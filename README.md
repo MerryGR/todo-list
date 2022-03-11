@@ -29,8 +29,14 @@
   <li><code>{ "user": "USERNAME", "pass": "PASSWORD" }</code></li>
 </ul>
 
-<p><code>GET: /logout</code> - <i>logs out the user, they must be logged in first</i></p>
+<p><code>GET: /logout</code> - <i>logs out the user</i></p>
 <p>Requirements:</p>
 <ul>
   <li>User must be logged in</li>
+</ul>
+
+<p><code>GET: /todo/all</code> - <i>gets all the TODO lists in the database</i></p>
+<p>Requirements:</p>
+<ul>
+  <li>None</li>
 </ul>
