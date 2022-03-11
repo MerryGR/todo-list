@@ -48,7 +48,7 @@
   <li>Body: <code>{ "title": "TITLE NAME", "createdby": "CREATED BY NAME" }</code></li>
 </ul>
 
-<p><code>GET: /todo/addtask</code> - <i>adds the task to a certain TODO list</i></p>
+<p><code>POST: /todo/addtask</code> - <i>adds the task to a certain TODO list</i></p>
 <p>Requirements:</p>
 <ul>
   <li>User must be logged in</li>
