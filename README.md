@@ -47,3 +47,11 @@
   <li>User must be logged in</li>
   <li>Body: <code>{ "title": "TITLE NAME", "createdby": "CREATED BY NAME" }</code></li>
 </ul>
+
+<p><code>POST: /todo/task/delete/:id/</code> - <i>deletes the task from the certain TODO list</i></p>
+<p>Requirements:</p>
+<ul>
+  <li>User must be logged in</li>
+  <li><code>:id</code> must be replaced with the task's ID</li>
+</ul>
+
