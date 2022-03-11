@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/register-login.css">
+        <title>Login | TODO List</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="reg-block">
+                <h1 style="line-height: 25px">Login<br><small style="font-size: 16px">TODO list</small></h1>
+                <div class="register-box">
+                    <form action="/login" method="POST">
+                        <label for="user">Username:</label><br>
+                        <input type="text" id="user" name="user"><br>
+                        <label for="pass">Password:</label><br>
+                        <input type="password" id="pass" name="pass">
+                        <input type="submit" value="Login">
+                    </form>
+                    <small>Don't you have an account? <a href="/register">Register</a> here.<br></small>
+                    <small>Go to <a href="/todo">TODO list</a></small>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

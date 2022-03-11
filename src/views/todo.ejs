@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/todo.css">
+        <title>TODO List</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>TODO List</h1>
+            <div class="todo-box">
+                <div class="header-box">
+                    <a href="/todo/create">Create New Item</a>
+                    <% if(user) { %>
+                    <a href="/todo/addtask">Add Task</a>
+                    <% } %>
+                </div>
+                <% todo.forEach((data) => { %>
+                    <a href="/todo/list/<%= data.id %>/">
+                        <div class="item-todo">
+                            <div style="cursor: pointer">
+                                <b style="line-height: 5px"><%= data.title %></b><br>
+                                <small><%= data.text %></small>
+                                <small>Type: List</small>
+                            </div>
+                            <div>
+                                <small><b>Responsible Users:</b><%= data.createdby %></small>
+                            </div>
+                        </div>
+                    </a>
+                <% }); %>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.container > h1 {
+    text-align: center;
+}
+
+.container > .todo-box {
+    margin-top: 60px;
+}
+
+.container > .todo-box > .header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container > .todo-box > .header-box > a {
+    text-decoration: none;
+    background: black;
+    border-radius: 20px;
+    padding: 10px 5px 10px 5px;
+    color: white;
+}
+
+.container > .todo-box > a > .item-todo {
+    position: relative;
+    display: flex;
+    background: lightgray;
+    padding: 10px;
+    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container > .todo-box > a {
+    text-decoration: none;
+    color: black;
+}
+
+.container > .todo-box > a > .item-todo > b {
+    font-weight: bold;
+}
+
+#button {
+    text-decoration: none;
+    background: black;
+    border-radius: 20px;
+    padding: 10px 5px 10px 5px;
+    color: white;
+}

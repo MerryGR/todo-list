@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/register-login.css">
+        <title>Add user to | TODO List</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="reg-block">
+                <h1>Add user moderator to this list</h1>
+                <div class="register-box">
+                    <form action="/todo/list/<%= list.id %>/useradd" method="POST">
+                        <label for="title">User (to add to this list):</label><br>
+                        <input type="text" id="user" name="user"><br>
+                        <input type="submit" value="Add">
+                        <br><small>Adding a user allows him to manage all tasks in the list.</small>
+                    </form>
+                    <small>Go <a href="/todo">back</a></small>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

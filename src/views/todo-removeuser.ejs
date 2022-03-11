@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/register-login.css">
+        <title>Remove user from list | TODO List</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="reg-block">
+                <h1>Remove user moderator from this list</h1>
+                <div class="register-box">
+                    <form action="/todo/list/<%= list.id %>/userdelete" method="POST">
+                        <label for="title">User (to remove from this list):</label><br>
+                        <input type="text" id="user" name="user"><br>
+                        <input type="submit" value="Remove">
+                        <br><small>Removing a user will prevent him from posting tasks and managing list!</small>
+                    </form>
+                    <small>Go <a href="/todo">back</a></small>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

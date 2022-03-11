@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/register-login.css">
+        <title>Create Task | TODO List</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="reg-block">
+                <h1>Create task for a list</h1>
+                <div class="register-box">
+                    <form action="/todo/addtask" method="POST">
+                        <label for="title">Title (which list to add task to):</label><br>
+                        <input type="text" id="title" name="title"><br>
+                        <label for="text">Text:</label><br>
+                        <input type="text" id="text" name="text"><br>
+                        <label for="deadline">Deadline:</label><br>
+                        <input type="date" id="deadline" name="deadline"><br>
+                        <input type="submit" value="Add">
+                        <br><small>By submitting this form, the new todo task will be created</small>
+                        <br><small>Or manage task flags <a href="/todo/taskflags">here</a>.</small>
+                    </form>
+                    <small>Go <a href="/todo">back</a></small>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

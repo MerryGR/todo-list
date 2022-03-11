@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/todo.css">
+        <title>TODO List</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>TODO Tasks for list <%= tasks[0].title %></h1>
+            <a href="/todo/list/<%= list.id %>/useradd" id="button">Add users to this list</a> | <a href="/todo/list/<%= list.id %>/userdelete" id="button">Delete users from this list</a> <br><br>
+            <div class="todo-box">
+                <% tasks.forEach((data) => { %>
+
+                        <a href="/todo/task/<%= data.id %>/setflag">Change Flags</a> | <a href="/todo/task/delete/<%= data.id %>/">Delete Task</a>
+                        <div class="item-todo" style="margin-bottom: 25px;">
+                            <div style="cursor: pointer;">
+                                <b style="line-height: 5px"><%= data.text %></b><br>
+                                <small>Deadline: <%= data.deadline %></small>
+                            </div>
+                            <div>
+                                <small><b>Task created by:</b><%= data.createdby %></small><br>
+                                <small><b>Status:</b><%= data.flags %></small>
+                            </div>
+                        </div>
+                <% }); %>
+            </div>
+        </div>
+    </body>
+</html>

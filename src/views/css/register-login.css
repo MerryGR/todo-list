@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.container > .reg-block {
+    margin-top: 60px;
+}
+
+.container > .reg-block > h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.container > .reg-block > .register-box{
+    width: 30%;
+    margin: 0 auto;
+}
+
+.container > .reg-block > .register-box > form {
+    width: 100%;
+}
+
+.container > .reg-block > .register-box > form > input[type=text] {
+    width: 100%;
+}
+
+.container > .reg-block > .register-box > form > input[type=password] {
+    width: 100%;
+}
+
+.container > .reg-block > .register-box > form > input[type=submit] {
+    margin-top: 10px;
+}
+
