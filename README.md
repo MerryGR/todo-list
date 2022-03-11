@@ -48,7 +48,14 @@
   <li>Body: <code>{ "title": "TITLE NAME", "createdby": "CREATED BY NAME" }</code></li>
 </ul>
 
-<p><code>POST: /todo/task/delete/:id/</code> - <i>deletes the task from the certain TODO list</i></p>
+<p><code>GET: /todo/addtask</code> - <i>adds the task to a certain TODO list</i></p>
+<p>Requirements:</p>
+<ul>
+  <li>User must be logged in</li>
+  <li>Body: <code>{ "title": "TITLE OF LIST WHERE TASK SHOULD BE ADDED", "deadline": "WHEN THE TASK ENDS", "text": "INFO ABOUT TASK" }</code></li>
+</ul>
+
+<p><code>GET: /todo/task/delete/:id/</code> - <i>deletes the task from the certain TODO list</i></p>
 <p>Requirements:</p>
 <ul>
   <li>User must be logged in</li>
