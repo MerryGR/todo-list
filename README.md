@@ -15,3 +15,5 @@
 </ul>
 
 <h2>:key: API Calls</h2>
+<p>TODO content can be managed by API calls, which are shown below:</p>
+<code>POST: /register</code>
