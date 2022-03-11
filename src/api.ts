@@ -71,7 +71,7 @@ app.post('/todo/create', async(req: Request, res: Response): Promise <void> => {
             if(title.length > 5) {
                 const listName = await TodoNames.findOne({where: {title: title}});
                 if(!listName) {
-                    const newUser = await TodoNames.create({title: title, createdby: createdby });
+                    const newUser = await TodoNames.create({title: title, createdby: req.session.userprofile.user + "," + createdby });
                     res.send('TODO list has been successfully created. Add something to it.');
                 } else res.send('This TODO list is already created, complete it first and delete it');
             } else res.send('Title must be more than 5 characters long!');
@@ -79,7 +79,7 @@ app.post('/todo/create', async(req: Request, res: Response): Promise <void> => {
     //} else res.send('Incorrect API key!');
 });
 
-app.post('/todo/delete/:id', async(req: Request, res: Response): Promise <void> => {
+app.get('/todo/delete/:id', async(req: Request, res: Response): Promise <void> => {
     if(req.session.userprofile) {
         const { id } = req.params;
         const deleteList = await TodoNames.findByPk(id);

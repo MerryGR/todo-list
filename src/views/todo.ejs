@@ -18,6 +18,7 @@
                     <% } %>
                 </div>
                 <% todo.forEach((data) => { %>
+                    <a href=" /todo/delete/<%= data.id %>/" style="text-decoration: underline;">Delete this list</a>
                     <a href="/todo/list/<%= data.id %>/">
                         <div class="item-todo">
                             <div style="cursor: pointer">

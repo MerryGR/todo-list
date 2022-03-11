@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>TODO Tasks for list <%= tasks[0].title %></h1>
+            <h1>TODO Tasks for list <%= list.title %></h1>
             <a href="/todo/list/<%= list.id %>/useradd" id="button">Add users to this list</a> | <a href="/todo/list/<%= list.id %>/userdelete" id="button">Delete users from this list</a> <br><br>
             <div class="todo-box">
                 <% tasks.forEach((data) => { %>
