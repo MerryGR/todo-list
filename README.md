@@ -8,4 +8,5 @@
   <li>Download the files</li>
   <li>Open the terminal</li>
   <li>Install all the packages by writing this command in the terminal: <code>npm i</code></li>
+  <li>Start the HTTP server by starting the code using this command: <code>node index.js PORT={number} - PORT parameter should be specified for the server to be started on the specific port!</code></li>
 </ul>
