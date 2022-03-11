@@ -18,15 +18,15 @@
 <p>TODO content can be managed by API calls, which are shown below:</p>
 
 <p><code>POST: /register</code> - <i>registers the user and inserts him inside the database</i></p>
-<p>Required body:</p>
+<p>Requirements:</p>
 <ul>
-  <li><code>{ "user": "USERNAME", "pass": "PASSWORD" }</code></li>
+  <li>Body: <code>{ "user": "USERNAME", "pass": "PASSWORD" }</code></li>
 </ul>
 
 <p><code>POST: /login</code> - <i>logs in the user and creates a session</i></p>
-<p>Required body:</p>
+<p>Requirements:</p>
 <ul>
-  <li><code>{ "user": "USERNAME", "pass": "PASSWORD" }</code></li>
+  <li>Body: <code>{ "user": "USERNAME", "pass": "PASSWORD" }</code></li>
 </ul>
 
 <p><code>GET: /logout</code> - <i>logs out the user</i></p>
@@ -39,4 +39,11 @@
 <p>Requirements:</p>
 <ul>
   <li>None</li>
+</ul>
+
+<p><code>POST: /todo/create</code> - <i>creates the TODO list in the database</i></p>
+<p>Requirements:</p>
+<ul>
+  <li>User must be logged in</li>
+  <li>Body: <code>{ "title": "TITLE NAME", "createdby": "CREATED BY NAME" }</code></li>
 </ul>
