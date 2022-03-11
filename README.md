@@ -13,3 +13,5 @@
   <li>Start the HTTP server by starting the code using this command: <code>node index.js PORT={number}</code> - <b>PORT parameter should be specified for the server to be started on the specific port!</b></li>
   <li>On the other hand, you are also capable to start the HTTP server as developer using the <b>Nodemon</b> package by typing: <code>npm run dev PORT={number}</code></li>
 </ul>
+
+<h2>:key: API Calls</h2>
