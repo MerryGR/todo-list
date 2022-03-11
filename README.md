@@ -23,8 +23,14 @@
   <li><code>{ "user": "USERNAME", "pass": "PASSWORD" }</code></li>
 </ul>
 
-<p><code>POST: /register</code> - <i>registers the user and inserts him inside the database</i></p>
+<p><code>POST: /login</code> - <i>logs in the user and creates a session</i></p>
 <p>Required body:</p>
 <ul>
   <li><code>{ "user": "USERNAME", "pass": "PASSWORD" }</code></li>
+</ul>
+
+<p><code>GET: /logout</code> - <i>logs out the user, they must be logged in first</i></p>
+<p>Requirements:</p>
+<ul>
+  <li>User must be logged in</li>
 </ul>
