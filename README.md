@@ -16,6 +16,13 @@
 
 <h2>:key: API Calls</h2>
 <p>TODO content can be managed by API calls, which are shown below:</p>
+
+<p><code>POST: /register</code> - <i>registers the user and inserts him inside the database</i></p>
+<p>Required body:</p>
+<ul>
+  <li><code>{ "user": "USERNAME", "pass": "PASSWORD" }</code></li>
+</ul>
+
 <p><code>POST: /register</code> - <i>registers the user and inserts him inside the database</i></p>
 <p>Required body:</p>
 <ul>
