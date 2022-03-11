@@ -79,6 +79,19 @@ app.post('/todo/create', async(req: Request, res: Response): Promise <void> => {
     //} else res.send('Incorrect API key!');
 });
 
+app.post('/todo/delete/:id', async(req: Request, res: Response): Promise <void> => {
+    if(req.session.userprofile) {
+        const { id } = req.params;
+        const deleteList = await TodoNames.findByPk(id);
+        if(deleteList?.createdby.includes(req.session.userprofile.user)) {
+            const allIds = await TodoRow.findAll({where: {title: deleteList.title}});
+            allIds.every(async(taskInList) => await taskInList.destroy());
+            await deleteList.destroy();
+            res.send('List and its tasks have been successfully destroyed!');
+        } else res.send('This list is not yours to delete!');
+    } else res.send('You must be logged in in order to delete TODO list!');
+});
+
 app.post('/todo/addtask', async(req: Request, res: Response): Promise<void> => {
     const {title, deadline, text} = req.body;
     if(req.session.userprofile) {
