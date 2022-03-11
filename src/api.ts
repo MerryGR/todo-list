@@ -147,7 +147,7 @@ app.post('/todo/task/:id/changeflag', async(req: Request, res: Response): Promis
         const { id } = req.params;
         const { flags } = req.body;
         const oneChange = await TodoRow.findByPk(id);
-        if(flags == "Active" || flags == "Done" || flags == "Remove") {
+        if(flags == "Active" || flags == "Done" || flags == "Removed") {
             oneChange?.set({flags: flags});
             await oneChange?.save();
             res.send('Flags successfully set!');
