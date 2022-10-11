@@ -12,12 +12,37 @@ API príkazy slúžia na komunikáciu medzi uživateľom a serverom. Uživateľ 
 ### Requesty GET
 `/posts/all` - získa všetky listy z databázi.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
-<b>Parametre v URL:</b> žiadne<br/><br/>
+<b>Parametre v URL:</b> žiadne<br/>
+<b>Return:</b> `{ok : bool, lists : Array}`<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `lists` - Array listov<br/><br/>
 
 `/posts/allitems/:id` - získa všetky položky z konkrétneho listu.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
-<b>Parametre v URL:</b><br/><b>id - ID konkrétneho listu</b><br/><br/>
+<b>Parametre v URL:</b> id - ID konkrétneho listu<br/><br/>
+<b>Return:</b> {ok : bool, items : Array}<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `items` - Array položiek<br/><br/>
 
 `/posts/allusers/:id` - získa všetkých uživateľov pridaných v konkrétnom liste.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
-<b>Parametre v URL:</b><br/><b>id - ID konkrétneho listu</b><br/><br/>
+<b>Parametre v URL:</b> id - ID konkrétneho listu<br/><br/>
+<b>Return:</b> {ok : bool, users : Array}<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `users` - Array použivateľov<br/><br/>
+
+`/posts/allusers/:id` - získa všetkých uživateľov pridaných v konkrétnom liste.<br/>
+<b>Oprávnenia: </b>žiadne<br/>
+<b>Parametre v URL:</b> id - ID konkrétneho listu<br/><br/>
+<b>Return:</b> {ok : bool, users : Array}<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `users` - Array použivateľov<br/><br/>
+
+### Requesty POST
+`/posts/create` - vytvorí list v databázi<br/>
+<b>Oprávnenia: </b>prihlásenie (JWT Bearer Token)<br/>
+<b>JSON Body:</b> name : <i>string</i><br/>
+<b>Return:</b> `{ok : bool, message : string}`<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+
+`/posts/additem` - vytvorí list v databázi<br/>
+<b>Oprávnenia: </b>prihlásenie (JWT Bearer Token)<br/>
+<b>JSON Body:</b> name : <i>string</i><br/>
+<b>Return:</b> `{ok : bool, message : string}`<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
