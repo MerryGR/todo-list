@@ -69,13 +69,13 @@ API príkazy slúžia na komunikáciu medzi uživateľom a serverom. Uživateľ 
 <b>Oprávnenia: </b>žiadne<br/>
 <b>JSON Body:</b> username : <i>string</i>, password : <i>string</i>, repeatPassword : <i>string</i><br/>
 <b>Return:</b> `{ok : bool, message : string (alebo errors : Array)}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `errors` - popis stavu requestu (ak `ok === false`, tak `errors` namiesto `message`)<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `errors` - Array errorov (ak `ok === false`, tak `errors` namiesto `message`)<br/><br/>
 
 `/users/login` - prihlási registrovaného použivateľa a JWT token uloží do cookie session medzi serverom a uživateľom.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
 <b>JSON Body:</b> username : <i>string</i>, password : <i>string</i><br/>
 <b>Return:</b> `{ok : bool, message : string (alebo errors : Array)}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `errors` - popis stavu requestu (ak `ok === false`, tak `errors` namiesto `message`)<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `message` - popis stavu requestu<br/><br/>
 
 ### Requesty DELETE
 `/lists/:id` - vymaže konkrétny list<br/>

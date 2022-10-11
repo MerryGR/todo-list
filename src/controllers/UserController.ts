@@ -10,7 +10,7 @@ export const register = async(req, res) : Promise<void> => {
 
    const userExists = await User.findOne({ where: { username: username } });
 
-   if(typeof (username || password || repeatPassword) !== 'undefined') {
+   if(typeof (username && password && repeatPassword) !== 'undefined') {
         
         if(!userExists) {
             if(username.length < 5)
@@ -40,7 +40,7 @@ export const login = async(req, res) : Promise<void> => {
     const errors = new Array();
     const {username, password} = req.body;
 
-    if(typeof (username || password) !== 'undefined') {
+    if(typeof (username && password) !== 'undefined') {
 
         const checkUser = await User.findOne({ where: { 
             username: username, 
@@ -54,7 +54,7 @@ export const login = async(req, res) : Promise<void> => {
                 httpOnly: true
             });
             return res.send({ok: true, message: 'Úspešne prihlásený!'});
-        } else return res.send('doesntwork');
+        } else return res.send({ok: false, message: 'Údaje nie sú správne!'});
 
-    } else res.send({ok: false, errors: ['Nevyplnene hodnoty!']});
+    } else res.send({ok: false, message: 'Chybne zadané údaje!'});
 }
