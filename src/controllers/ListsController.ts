@@ -49,12 +49,13 @@ export const deleteList = async(req, res) : Promise<void> => {
 }
 
 export const addItemToList = async(req, res) : Promise<void> => {
-    const { title, text, deadline, creator, id } = req.body;
-    if(typeof (id && req.verified && title && text && deadline && creator) !== 'undefined') {
+    const { title, text, deadline, id } = req.body;
+    if(typeof (id && req.verified && title && text && deadline) !== 'undefined') {
         const currentList = await List.findByPk(id, {include: User});
         if(currentList === null) return res.send({ok: false, message: 'Tento list neexistuje!'});
         const userExist = await currentList.getUsers({where: {id: req.decodedToken.id}});
         if(userExist.length === 0) return res.send({ok: false, message: 'Tento list nie je tvoj na pridavanie novych položiek!'});
+        const creator = userExist.getDataValue('username');
         await ListItem.create({
             title: title,
             text: text,
