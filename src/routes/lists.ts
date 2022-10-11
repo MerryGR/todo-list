@@ -7,7 +7,7 @@ var router = express.Router();
 router.get('/all', getAllLists);
 //Create a list (requires a user to be logged in)
 router.post('/create', verifyToken, createList);
-//A logged in user can delete their list (the creator itself), but not the users associated with it.
+//A logged in user can delete their list (even users associated with the list)
 router.delete('/:id', verifyToken, deleteList);
 //Add items to the list.. only for users associated with the list
 router.post('/additem', verifyToken, addItemToList);

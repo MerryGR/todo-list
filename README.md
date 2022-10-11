@@ -25,25 +25,25 @@ API príkazy slúžia na komunikáciu medzi uživateľom a serverom. Uživateľ 
 `/lists/allitems/:id` - získa všetky položky z konkrétneho listu.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
 <b>Parametre v URL:</b> id - ID konkrétneho listu<br/>
-<b>Return:</b> {ok : bool, items : Array}<br/>
+<b>Return:</b> `{ok : bool, items : Array}`<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `items` - Array položiek<br/><br/>
 
 `/lists/getitem/:id/:itemId` - získa konkrétnu položku z listu.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
 <b>Parametre v URL:</b> id - ID konkrétneho listu, itemId - ID konkrétnej položky<br/>
-<b>Return:</b> {ok : bool, item: Array}<br/>
+<b>Return:</b> `{ok : bool, item: Array}`<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `item` - jedna položka<br/><br/>
 
 `/lists/allusers/:id` - získa všetkých uživateľov pridaných v konkrétnom liste.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
 <b>Parametre v URL:</b> id - ID konkrétneho listu<br/>
-<b>Return:</b> {ok : bool, users : Array}<br/>
+<b>Return:</b> `{ok : bool, users : Array}`<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `users` - Array použivateľov<br/><br/>
 
 `/lists/getuser/:id` - získa konkrétneho uživateľa pridaného v liste.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
-<b>Parametre v URL:</b> id - ID konkrétneho listu<br/><br/>
-<b>Return:</b> {ok : bool, user : Array}<br/>
+<b>Parametre v URL:</b> id - ID konkrétneho listu<br/>
+<b>Return:</b> `{ok : bool, user : Array}`<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `user` - konkrétny uživateľ pridaný v liste<br/><br/>
 
 
@@ -69,5 +69,24 @@ API príkazy slúžia na komunikáciu medzi uživateľom a serverom. Uživateľ 
 `/lists/setflag` - nastaví status aktuálnej položke v liste<br/>
 <b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
 <b>JSON Body:</b> listId : <i>integer</i>, itemId : <i>integer</i>, value : <i>integer</i> (1 - aktívne, 2 - dokončené, 3 - vymazané)<br/>
+<b>Return:</b> `{ok : bool, message : string}`<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+
+### Requesty DELETE
+`/lists/:id` - vymaže konkrétny list<br/>
+<b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
+<b>Parametre v URL:</b> id - ID konkrétneho listu<br/>
+<b>Return:</b> `{ok : bool, message : string}`<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+
+`/lists/remove-item/:listId/:id` - vymaže z listu konkrétnu položku<br/>
+<b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
+<b>Parametre v URL:</b> id - ID konkrétnej položky, listId - ID konkrétneho listu<br/>
+<b>Return:</b> `{ok : bool, message : string}`<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+
+`/lists/removeuser/:listId/:userId` - vymaže z listu konkrétneho uživateľa<br/>
+<b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
+<b>Parametre v URL:</b> listId - ID konkrétneho listu, userId - ID konkrétneho uživateľa<br/>
 <b>Return:</b> `{ok : bool, message : string}`<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
