@@ -1,6 +1,6 @@
 import express from 'express'
 import {verifyToken} from '../utils/verifyToken'
-import {getAllLists, createList, deleteList, addItemToList, removeItemFromList, addUserToList, getAllListItems, getUsersInList, setItemFlag, removeUserFromList} from '../controllers/ListsController'
+import {getAllLists, createList, deleteList, addItemToList, removeItemFromList, addUserToList, getAllListItems, getUsersInList, setItemFlag, removeUserFromList, getExactList, getExactItem, getExactUserFromList} from '../controllers/ListsController'
 var router = express.Router();
 
 //Gets all lists
@@ -24,6 +24,10 @@ router.get('/allusers/:id', getUsersInList);
 router.post('/setflag', verifyToken, setItemFlag);
 //Remove user from list
 router.delete('/removeuser/:listId/:userId', verifyToken, removeUserFromList);
+//Gets the desired list (only one)
+router.get('/getlist/:id', getExactList);
+//Gets the desired item from the list (only one)
+router.get('/getitem/:id/:itemId', getExactItem);
 
 
 module.exports = router;

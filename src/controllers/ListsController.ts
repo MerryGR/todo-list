@@ -123,3 +123,20 @@ export const removeUserFromList = async(req, res) : Promise<void> => {
         return res.send({ok: true, message: `Uzivatel s ID ${userId} uspesne odstraneny!`});
     } else return res.send({ok: false, message: 'Chybne zadané údaje alebo nie si prihlásený!'});
 }
+
+export const getExactList = async(req, res) : Promise<void> => { 
+    const { id } = req.params;
+    const exactList = await List.findOne({where: {id: id}});
+    if(!exactList === null) return res.send({ok: false, message: 'Tento list neexistuje'});
+    return res.send({ok: true, list: exactList});
+}
+
+export const getExactItem = async(req, res) : Promise<void> => { 
+    const { listId, id } = req.params;
+    const exactList = await List.findOne({where: {id: listId}});
+    if(!exactList === null) return res.send({ok: false, message: 'Tento list neexistuje'});
+    const item = await exactList.getListItems({where: {id: id}});
+    if(!item === null) return res.send({ok: false, message: 'Polozka v tomto liste neexistuje'});
+    return res.send({ok: true, item: exactList});
+}
+

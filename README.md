@@ -14,38 +14,31 @@ API príkazy slúžia na komunikáciu medzi uživateľom a serverom. Uživateľ 
 <b>Oprávnenia: </b>žiadne<br/>
 <b>Parametre v URL:</b> žiadne<br/>
 <b>Return:</b> `{ok : bool, lists : Array}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `lists` - Array listov<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `lists` - Array listov (ak `ok === false`, tak `message` namiesto `user`)<br/><br/>
 
 `/lists/getlist/:id` - získa konkrétny list z databázi.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
 <b>Parametre v URL:</b> id - ID konkrétneho listu<br/>
 <b>Return:</b> `{ok : bool, list : Array}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `list` - konkrétny list<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `list` - konkrétny list (ak `ok === false`, tak `message` namiesto `user`)<br/><br/>
 
 `/lists/allitems/:id` - získa všetky položky z konkrétneho listu.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
 <b>Parametre v URL:</b> id - ID konkrétneho listu<br/>
 <b>Return:</b> `{ok : bool, items : Array}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `items` - Array položiek<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `items` - Array položiek (ak `ok === false`, tak `message` namiesto `user`)<br/><br/>
 
 `/lists/getitem/:id/:itemId` - získa konkrétnu položku z listu.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
 <b>Parametre v URL:</b> id - ID konkrétneho listu, itemId - ID konkrétnej položky<br/>
 <b>Return:</b> `{ok : bool, item: Array}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `item` - jedna položka<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `item` - jedna položka (ak `ok === false`, tak `message` namiesto `user`)<br/><br/>
 
 `/lists/allusers/:id` - získa všetkých uživateľov pridaných v konkrétnom liste.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
 <b>Parametre v URL:</b> id - ID konkrétneho listu<br/>
 <b>Return:</b> `{ok : bool, users : Array}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `users` - Array použivateľov<br/><br/>
-
-`/lists/getuser/:id` - získa konkrétneho uživateľa pridaného v liste.<br/>
-<b>Oprávnenia: </b>žiadne<br/>
-<b>Parametre v URL:</b> id - ID konkrétneho listu<br/>
-<b>Return:</b> `{ok : bool, user : Array}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `user` - konkrétny uživateľ pridaný v liste<br/><br/>
-
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `users` - Array použivateľov (ak `ok === false`, tak `message` namiesto `user`)<br/><br/>
 
 ### Requesty POST
 `/lists/create` - vytvorí list v databázi<br/>
