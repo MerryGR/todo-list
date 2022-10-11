@@ -4,7 +4,7 @@ Todo List je projekt, pomocou ktorého je možné pridávať a odstraňovať lis
 Ako prvé pri uložení projektu je potrebné nainštalovať všetky možné dodatky, s ktorými kód pracuje.<br/>
 Príkazom `npm i` sa dodatky automaticky nainštalujú.<br/><br/>
 Akonáhle sa všetky dodatky nainštalovali, je potrebné skompilovať Typescript projekt.<br/>
-Typescript projekt sa skompiluje v zložke `backend/` príkazom `tsc`. <br/><br/>
+Typescript projekt sa skompiluje príkazom `tsc`. Toto je potrebné vykonať v hlavnej zložke!<br/><br/>
 Ak je projekt skompilovaný, je čas spustiť kód. <br/>
 Príkazom `node dist/app.js` sa spustí kód, ktorý zapne HTTP server a začne 'načúvať' requestom zo strany uživateľa.
 ## API Requesty
