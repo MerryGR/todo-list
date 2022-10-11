@@ -1,6 +1,6 @@
 import express from 'express'
 import {verifyToken} from '../utils/verifyToken'
-import {register, login, user} from '../controllers/UserController'
+import {register, login} from '../controllers/UserController'
 var router = express.Router();
 
 //Path to register a user. POST Request to API, no authentication required.

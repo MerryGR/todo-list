@@ -45,25 +45,25 @@ API requesty slúžia na komunikáciu medzi uživateľom a serverom. Uživateľ 
 <b>Oprávnenia: </b>prihlásenie (JWT Bearer Token)<br/>
 <b>JSON Body:</b> name : <i>string</i><br/>
 <b>Return:</b> `{ok : bool, message : string}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `message` - popis stavu requestu<br/><br/>
 
 `/lists/additem` - pridá do listu novú položku<br/>
 <b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
-<b>JSON Body:</b> title : <i>string</i>, text : <i>string</i>, deadline : <i>string</i>, creator : <i>string</i>, id : <i>integer</i> (ID listu)<br/>
+<b>JSON Body:</b> title : <i>string</i>, text : <i>string</i>, deadline : <i>DATE</i>, creator : <i>string</i>, id : <i>integer</i> (ID listu)<br/>
 <b>Return:</b> `{ok : bool, message : string}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `message` - popis stavu requestu<br/><br/>
 
 `/lists/adduser` - pridá do listu novú osobu<br/>
 <b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
 <b>JSON Body:</b> userId : <i>integer</i>, listId : <i>integer</i><br/>
 <b>Return:</b> `{ok : bool, message : string}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `message` - popis stavu requestu<br/><br/>
 
 `/lists/setflag` - nastaví status aktuálnej položke v liste<br/>
 <b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
 <b>JSON Body:</b> listId : <i>integer</i>, itemId : <i>integer</i>, value : <i>integer</i> (1 - aktívne, 2 - dokončené, 3 - vymazané)<br/>
 <b>Return:</b> `{ok : bool, message : string}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `message` - popis stavu requestu<br/><br/>
 
 `/users/register` - zaregistruje nového použivateľa<br/>
 <b>Oprávnenia: </b>žiadne<br/>

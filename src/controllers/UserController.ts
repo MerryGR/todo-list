@@ -37,7 +37,6 @@ export const register = async(req, res) : Promise<void> => {
 }
 
 export const login = async(req, res) : Promise<void> => {
-    const errors = new Array();
     const {username, password} = req.body;
 
     if(typeof (username && password) !== 'undefined') {

@@ -1,6 +1,6 @@
 import express from 'express'
 import {verifyToken} from '../utils/verifyToken'
-import {getAllLists, createList, deleteList, addItemToList, removeItemFromList, addUserToList, getAllListItems, getUsersInList, setItemFlag, removeUserFromList, getExactList, getExactItem, getExactUserFromList} from '../controllers/ListsController'
+import {getAllLists, createList, deleteList, addItemToList, removeItemFromList, addUserToList, getAllListItems, getUsersInList, setItemFlag, removeUserFromList, getExactList, getExactItem} from '../controllers/ListsController'
 var router = express.Router();
 
 //Gets all lists
