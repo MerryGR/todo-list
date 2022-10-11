@@ -12,4 +12,12 @@ API príkazy slúžia na komunikáciu medzi uživateľom a serverom. Uživateľ 
 ### Requesty GET
 `/posts/all` - získa všetky listy z databázi.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
-<b>Parametre v URL:</b> žiadne<br/>
+<b>Parametre v URL:</b> žiadne<br/><br/>
+
+`/posts/allitems/:id` - získa všetky položky z konkrétneho listu.<br/>
+<b>Oprávnenia: </b>žiadne<br/>
+<b>Parametre v URL:</b><br/><b>id - ID konkrétneho listu</b><br/><br/>
+
+`/posts/allusers/:id` - získa všetkých uživateľov pridaných v konkrétnom liste.<br/>
+<b>Oprávnenia: </b>žiadne<br/>
+<b>Parametre v URL:</b><br/><b>id - ID konkrétneho listu</b><br/><br/>
