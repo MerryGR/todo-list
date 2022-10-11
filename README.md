@@ -82,16 +82,16 @@ API requesty slúžia na komunikáciu medzi uživateľom a serverom. Uživateľ 
 <b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
 <b>Parametre v URL:</b> id - ID konkrétneho listu<br/>
 <b>Return:</b> `{ok : bool, message : string}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `message` - popis stavu requestu<br/><br/>
 
 `/lists/remove-item/:listId/:id` - vymaže z listu konkrétnu položku<br/>
 <b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
 <b>Parametre v URL:</b> id - ID konkrétnej položky, listId - ID konkrétneho listu<br/>
 <b>Return:</b> `{ok : bool, message : string}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `message` - popis stavu requestu<br/><br/>
 
 `/lists/removeuser/:listId/:userId` - vymaže z listu konkrétneho uživateľa<br/>
 <b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
 <b>Parametre v URL:</b> listId - ID konkrétneho listu, userId - ID konkrétneho uživateľa<br/>
 <b>Return:</b> `{ok : bool, message : string}`<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `message` - popis stavu requestu<br/><br/>
