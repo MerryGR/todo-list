@@ -72,11 +72,12 @@ export const removeItemFromList = async(req, res) : Promise<void> => {
     if(typeof (listId && id && req.verified) !== 'undefined') {
         const existsList = await List.findByPk(listId);
         if(existsList === null) return res.send({ok: false, message: 'Tento list neexistuje!'});
-        const itemExists = await ListItem.findByPk(id);
+        const itemExists = await existsList.getListItems({where: {id: id}});
         if(itemExists === null) return res.send({ok: false, message: 'Toto ID itemu neexistuje.'});
         const userExist = await existsList.getUsers({where: {id: req.decodedToken.id}});
         if(userExist.length === 0) return res.send({ok: false, message: 'Tento list nie je tvoj na odstranovanie položiek!'});
         await ListItem.destroy({where: {listId: listId, id: id}});
+        return res.send({ok: true, message: 'Položka listu úspešne odstránená!'});
     } else return res.send({ok: false, message: 'Chybne zadané údaje alebo nie si prihlásený!'});
 }
 
