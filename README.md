@@ -7,8 +7,8 @@ Akonáhle sa všetky dodatky nainštalovali, je potrebné skompilovať Typescrip
 Typescript projekt sa skompiluje v zložke `backend/` príkazom `tsc`. <br/><br/>
 Ak je projekt skompilovaný, je čas spustiť kód. <br/>
 Príkazom `node dist/app.js` sa spustí kód, ktorý zapne HTTP server a začne 'načúvať' requestom zo strany uživateľa.
-## API Príkazy
-API príkazy slúžia na komunikáciu medzi uživateľom a serverom. Uživateľ môže získavať, pridávať, odstraňovať dáta v databáze. Tieto operácie závisia od oprávnení uživateľa.
+## API Requesty
+API requesty slúžia na komunikáciu medzi uživateľom a serverom. Uživateľ môže získavať, pridávať, odstraňovať dáta v databáze. Tieto operácie závisia od oprávnení uživateľa.
 ### Requesty GET
 `/lists/all` - získa všetky listy z databázi.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
