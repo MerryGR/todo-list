@@ -24,19 +24,19 @@ API príkazy slúžia na komunikáciu medzi uživateľom a serverom. Uživateľ 
 
 `/lists/allitems/:id` - získa všetky položky z konkrétneho listu.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
-<b>Parametre v URL:</b> id - ID konkrétneho listu<br/><br/>
+<b>Parametre v URL:</b> id - ID konkrétneho listu<br/>
 <b>Return:</b> {ok : bool, items : Array}<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `items` - Array položiek<br/><br/>
 
 `/lists/getitem/:id/:itemId` - získa konkrétnu položku z listu.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
-<b>Parametre v URL:</b> id - ID konkrétneho listu, itemId - ID konkrétnej položky<br/><br/>
+<b>Parametre v URL:</b> id - ID konkrétneho listu, itemId - ID konkrétnej položky<br/>
 <b>Return:</b> {ok : bool, item: Array}<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `item` - jedna položka<br/><br/>
 
 `/lists/allusers/:id` - získa všetkých uživateľov pridaných v konkrétnom liste.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
-<b>Parametre v URL:</b> id - ID konkrétneho listu<br/><br/>
+<b>Parametre v URL:</b> id - ID konkrétneho listu<br/>
 <b>Return:</b> {ok : bool, users : Array}<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `users` - Array použivateľov<br/><br/>
 
