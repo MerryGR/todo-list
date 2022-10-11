@@ -10,39 +10,64 @@ Príkazom `node dist/app.js` sa spustí kód, ktorý zapne HTTP server a začne 
 ## API Príkazy
 API príkazy slúžia na komunikáciu medzi uživateľom a serverom. Uživateľ môže získavať, pridávať, odstraňovať dáta v databáze. Tieto operácie závisia od oprávnení uživateľa.
 ### Requesty GET
-`/posts/all` - získa všetky listy z databázi.<br/>
+`/lists/all` - získa všetky listy z databázi.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
 <b>Parametre v URL:</b> žiadne<br/>
 <b>Return:</b> `{ok : bool, lists : Array}`<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `lists` - Array listov<br/><br/>
 
-`/posts/allitems/:id` - získa všetky položky z konkrétneho listu.<br/>
+`/lists/getlist/:id` - získa konkrétny list z databázi.<br/>
+<b>Oprávnenia: </b>žiadne<br/>
+<b>Parametre v URL:</b> id - ID konkrétneho listu<br/>
+<b>Return:</b> `{ok : bool, list : Array}`<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `list` - konkrétny list<br/><br/>
+
+`/lists/allitems/:id` - získa všetky položky z konkrétneho listu.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
 <b>Parametre v URL:</b> id - ID konkrétneho listu<br/><br/>
 <b>Return:</b> {ok : bool, items : Array}<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `items` - Array položiek<br/><br/>
 
-`/posts/allusers/:id` - získa všetkých uživateľov pridaných v konkrétnom liste.<br/>
+`/lists/getitem/:id/:itemId` - získa konkrétnu položku z listu.<br/>
+<b>Oprávnenia: </b>žiadne<br/>
+<b>Parametre v URL:</b> id - ID konkrétneho listu, itemId - ID konkrétnej položky<br/><br/>
+<b>Return:</b> {ok : bool, item: Array}<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `item` - jedna položka<br/><br/>
+
+`/lists/allusers/:id` - získa všetkých uživateľov pridaných v konkrétnom liste.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
 <b>Parametre v URL:</b> id - ID konkrétneho listu<br/><br/>
 <b>Return:</b> {ok : bool, users : Array}<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `users` - Array použivateľov<br/><br/>
 
-`/posts/allusers/:id` - získa všetkých uživateľov pridaných v konkrétnom liste.<br/>
+`/lists/getuser/:id` - získa konkrétneho uživateľa pridaného v liste.<br/>
 <b>Oprávnenia: </b>žiadne<br/>
 <b>Parametre v URL:</b> id - ID konkrétneho listu<br/><br/>
-<b>Return:</b> {ok : bool, users : Array}<br/>
-<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `users` - Array použivateľov<br/><br/>
+<b>Return:</b> {ok : bool, user : Array}<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `user` - konkrétny uživateľ pridaný v liste<br/><br/>
+
 
 ### Requesty POST
-`/posts/create` - vytvorí list v databázi<br/>
+`/lists/create` - vytvorí list v databázi<br/>
 <b>Oprávnenia: </b>prihlásenie (JWT Bearer Token)<br/>
 <b>JSON Body:</b> name : <i>string</i><br/>
 <b>Return:</b> `{ok : bool, message : string}`<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
 
-`/posts/additem` - vytvorí list v databázi<br/>
-<b>Oprávnenia: </b>prihlásenie (JWT Bearer Token)<br/>
-<b>JSON Body:</b> name : <i>string</i><br/>
+`/lists/additem` - pridá do listu novú položku<br/>
+<b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
+<b>JSON Body:</b> title : <i>string</i>, text : <i>string</i>, deadline : <i>string</i>, creator : <i>string</i>, id : <i>integer</i> (ID listu)<br/>
+<b>Return:</b> `{ok : bool, message : string}`<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+
+`/lists/adduser` - pridá do listu novú osobu<br/>
+<b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
+<b>JSON Body:</b> userId : <i>integer</i>, listId : <i>integer</i><br/>
+<b>Return:</b> `{ok : bool, message : string}`<br/>
+<b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
+
+`/lists/setflag` - nastaví status aktuálnej položke v liste<br/>
+<b>Oprávnenia: </b>prihlásenie (JWT Bearer Token) + pridaný v liste<br/>
+<b>JSON Body:</b> listId : <i>integer</i>, itemId : <i>integer</i>, value : <i>integer</i> (1 - aktívne, 2 - dokončené, 3 - vymazané)<br/>
 <b>Return:</b> `{ok : bool, message : string}`<br/>
 <b>Atribúty:</b> `ok` [true/false] - request bol úspešný/neúspešný, `string` - popis stavu requestu<br/><br/>
