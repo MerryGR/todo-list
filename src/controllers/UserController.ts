@@ -58,9 +58,3 @@ export const login = async(req, res) : Promise<void> => {
 
     } else res.send({ok: false, errors: ['Nevyplnene hodnoty!']});
 }
-
-export const user = async(req, res) : Promise<void> => {
-    if(req.verified)
-        return res.send('Hello');
-    else return res.sendStatus(403);
-}

@@ -7,6 +7,5 @@ var router = express.Router();
 router.post('/register', register);
 //Logs in the user and generates JWT which lasts for 2 hours.
 router.post('/login', login);
-router.get('/user', verifyToken, user);
 
 module.exports = router;
